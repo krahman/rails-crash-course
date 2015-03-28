@@ -9,7 +9,3 @@ class Person
 		@name = name
 	end
 end
-
-p = Person.new("Tony")
-
-p.distract
