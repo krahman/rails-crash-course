@@ -20,3 +20,5 @@ puts f.calc 1
 puts f.calc 2
 puts f.calc 10
 puts f.calc 30
+puts f.calc 100
+puts f.calc 1000
