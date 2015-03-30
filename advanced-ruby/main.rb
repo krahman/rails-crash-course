@@ -1,6 +1,7 @@
 load 'person.rb'
 load 'fibonacci.rb'
 load 'library.rb'
+load 'user.rb'
 
 p = Person.new("Khal")
 
@@ -56,3 +57,31 @@ puts "p is a Person (is_a), #{isPerson}."
 puts "p is a Object (is_a), #{isPersonObj}."
 puts "p is a Person (instance_of), #{isInstanceOf}."
 puts "p is a Object (instance_of), #{isInstanceOfObj}."
+
+# Duck Typing
+def write_with_time(file, info)
+	if file.instance_of? File
+		file.puts "#{Time.now} - #{info}"
+	else
+		raise ArgumentError
+	end
+
+	if file.respond_to?(:puts)
+		file.puts "#{Time.now} - #{info}"
+	else
+		raise ArgumentError
+	end
+end
+
+f = File.open("test.txt", "w")
+write_with_time(f, "Hello, World!")
+f.close
+
+# Metaprogramming
+user = User.new
+puts user.can_create?
+puts user.can_create!
+puts user.can_update?
+puts user.can_update!	
+puts user.can_delete?
+puts user.can_delete!
