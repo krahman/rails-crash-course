@@ -2,6 +2,7 @@ load 'person.rb'
 load 'fibonacci.rb'
 load 'library.rb'
 load 'user.rb'
+load 'element.rb'
 
 p = Person.new("Khal")
 
@@ -77,7 +78,7 @@ f = File.open("test.txt", "w")
 write_with_time(f, "Hello, World!")
 f.close
 
-# Metaprogramming
+# Metaprogramming - define_method
 user = User.new
 puts user.can_create?
 puts user.can_create!
@@ -85,3 +86,7 @@ puts user.can_update?
 puts user.can_update!	
 puts user.can_delete?
 puts user.can_delete!
+
+# Metaprogramming - class_eval
+elm = Element.new("khal")
+puts elm.name
