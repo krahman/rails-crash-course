@@ -3,6 +3,7 @@ load 'fibonacci.rb'
 load 'library.rb'
 load 'user.rb'
 load 'element.rb'
+load 'echo.rb'
 
 p = Person.new("Khal")
 
@@ -90,3 +91,7 @@ puts user.can_delete!
 # Metaprogramming - class_eval
 elm = Element.new("khal")
 puts elm.name
+
+# Metaprogramming - method_missing
+echo = Echo.new
+echo.hello
